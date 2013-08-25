@@ -1,10 +1,10 @@
 <%= form_for ([@post, @post.comments.build]) do |f| %>
   <div class="field">
-  	<%= f.lable :commenter %><br>
-  	<%= f.text_filed :commenter %>
+  	<%= f.label :commenter %><br>
+  	<%= f.text_field :commenter %>
   </div>
   <div class="field">
-  	<%= f.lable :body %><br>
+  	<%= f.label :body %><br>
   	<%= f.text_area :body %>
   </div>
   <div class="actions">

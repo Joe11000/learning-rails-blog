@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 
+  http_basic_authenticate_with :name => "Ned Kaida-Yip", :password => "Rudius"
   def new
     @post = Post.new
     
