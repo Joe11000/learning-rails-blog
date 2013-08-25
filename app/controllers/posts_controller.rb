@@ -44,6 +44,25 @@ class PostsController < ApplicationController
   	end
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+  	@post = Post.find(params[:id])
+  	respond_to do |format|
+  	  if @post.update_attributes(params[:post])
+  	  	format.html { redirect_to(@post,
+  	  		          :notice => 'Update Successful.')}
+  	    format.json { head :no_content }
+  	  else 
+  	  	format.html { render :action => "edit" }
+  	  	format.json { render :json => @post.errors,
+  	  	              :status => :unprocessable_entity }
+      end  	  	              
+  	end
+  end
+
   # private
   
   # def post_params
